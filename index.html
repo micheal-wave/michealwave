@@ -6,6 +6,10 @@ body {
 a {
     color: black;
 }
+#counter {
+    text-align: center;
+    font-size: 28px;
+}
 #banner {
     text-align: center;
     font-size: 24px;
@@ -20,6 +24,66 @@ a {
 <br>
 <img style="display: block; margin-left: auto; margin-right: auto; height: 64px; width: 64px;" src="waves.gif">
 <h2 style="text-align: center;">Above: Micro(scopic)Wave</h2>
+
+<h2 style="text-align: center;">Microwaving for:</h2>
+<div id="counter">Loading...</div>
+
 <div id="banner">
-    <a href="https://github.com/micheal-wave">A site by Micheal Wave @micheal-wave</a>
+    <a href="https://github.com/micheal-wave">
+        A site by Micheal Wave @micheal-wave
+    </a>
 </div>
+
+<script>
+    const startDate = new Date("2026-09-06T00:45:00");
+
+    function updateCounter() {
+        const now = new Date();
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+
+        if (days < 0) {
+            months--;
+            const previousMonth = new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                0
+            );
+            days += previousMonth.getDate();
+        }
+
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        document.getElementById("counter").textContent =
+            years + " years, " +
+            months + " months, " +
+            days + " days, " +
+            hours + " hours, " +
+            minutes + " minutes, " +
+            seconds + " seconds";
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 1000);
+</script>

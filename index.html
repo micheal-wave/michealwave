@@ -203,6 +203,54 @@
   .faq-item h3{ font-size:15px; margin:0 0 6px; }
   .faq-item p{ font-size:14px; color:var(--ink-soft); margin:0; line-height:1.6; }
 
+  /* ---- fact files (knowledge base entries) ---- */
+  .kb-list{ max-width:740px; margin:0 auto; display:flex; flex-direction:column; }
+  .kb-entry{ display:grid; grid-template-columns:88px 1fr; gap:22px; padding:22px 0; border-top:1px solid var(--line); }
+  .kb-list .kb-entry:first-child{ border-top:none; padding-top:6px; }
+  .kb-id{ font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--violet); padding-top:2px; }
+  .kb-id .kb-year{ display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:var(--ink-soft); margin-top:5px; }
+  .kb-entry h3{ font-size:16px; margin:0 0 7px; }
+  .kb-entry p{ font-size:14px; color:var(--ink-soft); line-height:1.62; margin:0; }
+  @media (max-width:600px){ .kb-entry{ grid-template-columns:1fr; gap:6px; } .kb-id{ display:flex; align-items:baseline; gap:10px; } .kb-id .kb-year{ margin-top:0; } }
+
+  /* ---- ocean (micro waves) section ---- */
+  .ocean-section{
+    --sea:#0e7a92; --sea-2:#5fd4dc; --sea-ink:#eafcfb; --sea-ink-soft:#a9d3d8;
+    background: linear-gradient(165deg,#062a3a,#0a4a5e 55%,#0f6d82);
+    color: var(--sea-ink);
+    border-radius: 28px;
+    padding: 60px 30px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ocean-section .section-head .eyebrow{ color: var(--sea-2); }
+  .ocean-section .section-head h2{ color:#fff; }
+  .ocean-section .section-head p{ color: var(--sea-ink-soft); }
+
+  .wave-strip{ display:block; width:100%; height:56px; margin:6px 0 40px; overflow:hidden; }
+  .wave-strip path{ fill:none; stroke:var(--sea-2); stroke-width:2; opacity:.6; }
+  .wave-strip path.w2{ stroke:#eafcfb; opacity:.22; }
+  .wave-strip .waveline{ animation: wavemove 9s linear infinite; }
+  @keyframes wavemove{ from{ transform:translateX(0); } to{ transform:translateX(-200px); } }
+
+  .ocean-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:48px; }
+  @media (max-width:760px){ .ocean-stats{ grid-template-columns:repeat(2,1fr); } }
+  .ocean-stat{ background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16); border-radius:14px; padding:18px 14px; text-align:center; }
+  .ocean-stat .num{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px; color:#fff; }
+  .ocean-stat .label{ font-size:12px; color:var(--sea-ink-soft); margin-top:6px; line-height:1.4; }
+
+  .oc-list{ max-width:740px; margin:0 auto; display:flex; flex-direction:column; }
+  .oc-entry{ display:grid; grid-template-columns:88px 1fr; gap:22px; padding:20px 0; border-top:1px solid rgba(255,255,255,0.16); }
+  .oc-list .oc-entry:first-child{ border-top:none; padding-top:6px; }
+  .oc-id{ font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--sea-2); padding-top:2px; }
+  .oc-entry h3{ font-size:16px; margin:0 0 7px; color:#fff; }
+  .oc-entry p{ font-size:14px; color:var(--sea-ink-soft); line-height:1.62; margin:0; }
+  @media (max-width:600px){ .oc-entry{ grid-template-columns:1fr; gap:6px; } }
+
+  .mythbust{ margin:40px auto 0; max-width:740px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.2); border-radius:16px; padding:22px 24px; }
+  .mythbust .kicker{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--sea-2); margin-bottom:8px; }
+  .mythbust p{ font-size:14.5px; color:var(--sea-ink); line-height:1.65; margin:0; }
+
   /* ---- final cta ---- */
   .cta-band{ background:linear-gradient(135deg,var(--violet),var(--blue)); border-radius:24px; padding:56px 30px; text-align:center; color:#fff; }
   .cta-band h2{ font-size:clamp(24px,3.4vw,32px); margin:0 0 10px; }
@@ -229,6 +277,8 @@
     <div class="navlinks">
       <a href="#platform">Platform</a>
       <a href="#telemetry">Telemetry</a>
+      <a href="#facts">Fact Files</a>
+      <a href="#ocean">Micro Waves</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -365,7 +415,7 @@
           <li>Manual door open/close</li>
           <li>Community support</li>
         </ul>
-        <a class="btn btn-outline" href="#">Get started</a>
+        <a class="btn btn-outline" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Get started</a>
       </div>
       <div class="price pop">
         <h3>Growth</h3>
@@ -377,7 +427,7 @@
           <li>Priority popcorn detection</li>
           <li>99.999% uptime SLA*</li>
         </ul>
-        <a class="btn btn-primary" href="#">Book a demo</a>
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Book a demo</a>
       </div>
       <div class="price">
         <h3>Enterprise</h3>
@@ -389,7 +439,7 @@
           <li>Custom compliance PDF</li>
           <li>A person will call you</li>
         </ul>
-        <a class="btn btn-outline" href="#">Contact sales</a>
+        <a class="btn btn-outline" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contact sales</a>
       </div>
     </div>
   </div>
@@ -406,6 +456,132 @@
       <div class="faq-item"><h3>What does ThermalMesh™ actually do?</h3><p>It heats food. The mesh part is mostly the metal grille on the door.</p></div>
       <div class="faq-item"><h3>Is my data secure?</h3><p>There is no data. There is a burrito.</p></div>
       <div class="faq-item"><h3>Do you offer an SLA?</h3><p>Yes, informally, and it is honored whenever someone remembers to press start.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="facts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Documentation</div>
+      <h2>The microwave, documented</h2>
+      <p>A running record of how a box that heats food became one, written with more seriousness than it deserves.</p>
+    </div>
+    <div class="kb-list">
+      <div class="kb-entry">
+        <div class="kb-id">KB-001<span class="kb-year">1945</span></div>
+        <div>
+          <h3>The incident</h3>
+          <p>Raytheon engineer Percy Spencer is testing an active magnetron — the tube behind wartime radar — when he notices the candy bar in his pocket has melted. He sends out for popcorn kernels next. They pop. An egg follows, and does not end well for a nearby colleague.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-002<span class="kb-year">1945–47</span></div>
+        <div>
+          <h3>Filing &amp; release</h3>
+          <p>Raytheon files a patent for microwave cooking that October. The first commercial unit, the Radarange, ships a couple of years later: about six feet tall, several hundred pounds, and priced well out of reach of a home kitchen.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-003<span class="kb-year">always true</span></div>
+        <div>
+          <h3>How it actually heats</h3>
+          <p>A magnetron drives water, fat, and sugar molecules — all slightly lopsided electrically — to keep flipping in step with an oscillating field. That flipping is friction. Friction is heat. There is no other trick.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-004<span class="kb-year">known issue</span></div>
+        <div>
+          <h3>Why the middle stays cold</h3>
+          <p>Inside a closed metal box, microwaves reflect and overlap into a fixed pattern of hot and cold points. The turntable isn't a courtesy feature — it's the reason the edge of your plate isn't lava while the center stays lukewarm.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-005<span class="kb-year">handling note</span></div>
+        <div>
+          <h3>The metal rule, precisely</h3>
+          <p>Thin foil, forks, anything with a sharp edge — charge piles up at the point and arcs. A thick, smooth metal surface, like the oven's own walls, just reflects the field harmlessly. That's why the box doing the cooking is metal too.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-006<span class="kb-year">emergent behavior</span></div>
+        <div>
+          <h3>The grape thing is real</h3>
+          <p>Two grape halves, still joined by a strip of skin, microwaved together: the gap between them focuses enough field to strike a small arc of plasma. It's a genuine, published physics demonstration, not an internet myth.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-007<span class="kb-year">adoption</span></div>
+        <div>
+          <h3>From novelty to fixture</h3>
+          <p>What started as restaurant and ship's-galley equipment shrank and cheapened for decades. By the mid-1990s, roughly nine in ten American households had one — quietly, with no launch event.</p>
+        </div>
+      </div>
+      <div class="kb-entry">
+        <div class="kb-id">KB-008<span class="kb-year">lineage</span></div>
+        <div>
+          <h3>It was defense infrastructure first</h3>
+          <p>The magnetron at the center of every microwave was mass-produced for Allied radar during the Second World War — Raytheon alone built the large majority of the tubes used. The oven is a wartime supply chain with a turntable bolted on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ocean">
+  <div class="wrap">
+    <div class="ocean-section">
+      <div class="section-head">
+        <div class="eyebrow">New division · unrequested</div>
+        <h2>We also do the other micro waves</h2>
+        <p>Turns out the word was already taken by the ocean. Here's the part of the business nobody asked us to open.</p>
+      </div>
+
+      <svg class="wave-strip" viewBox="0 0 800 64" preserveAspectRatio="none" aria-hidden="true">
+        <g class="waveline">
+          <path class="w2" d="M0,40 Q50,10 100,40 T200,40 T300,40 T400,40 T500,40 T600,40 T700,40 T800,40 T900,40 T1000,40"/>
+          <path d="M0,46 Q50,22 100,46 T200,46 T300,46 T400,46 T500,46 T600,46 T700,46 T800,46 T900,46 T1000,46"/>
+        </g>
+      </svg>
+
+      <div class="ocean-stats">
+        <div class="ocean-stat"><div class="num">2–3s</div><div class="label">period, average wind wave</div></div>
+        <div class="ocean-stat"><div class="num">&lt;2cm</div><div class="label">wavelength, capillary wave</div></div>
+        <div class="ocean-stat"><div class="num">0–12</div><div class="label">Beaufort force, calm to hurricane</div></div>
+        <div class="ocean-stat"><div class="num">1975</div><div class="label">first satellite to measure this from orbit</div></div>
+      </div>
+
+      <div class="oc-list">
+        <div class="oc-entry">
+          <div class="oc-id">OC-001</div>
+          <div><h3>The smallest waves aren't gravity's problem</h3><p>Ripples under about two centimetres are capillary waves — surface tension pulls them flat, not gravity. Give the wind a little longer and gravity takes over, and you get the swell that actually pushes a boat around.</p></div>
+        </div>
+        <div class="oc-entry">
+          <div class="oc-id">OC-002</div>
+          <div><h3>Fetch is the whole game</h3><p>Wave size mostly comes down to how far the wind has blown over open water, uninterrupted, and for how long. A stiff wind across a pond makes ripples. The same wind across an ocean makes something else entirely.</p></div>
+        </div>
+        <div class="oc-entry">
+          <div class="oc-id">OC-003</div>
+          <div><h3>The Beaufort scale grades the sea, not the wind</h3><p>Each of its thirteen steps, from 0 to 12, was originally written as a description of how the sea surface looks — from glassy calm to foam blown in dense streaks — with a wind speed attached after the fact.</p></div>
+        </div>
+        <div class="oc-entry">
+          <div class="oc-id">OC-004</div>
+          <div><h3>"Significant" is a defined number</h3><p>Significant wave height isn't a judgment call. It's the average height of the tallest third of all the waves passing a point — a specific statistic long before it became a line on a surf forecast.</p></div>
+        </div>
+        <div class="oc-entry">
+          <div class="oc-id">OC-005</div>
+          <div><h3>Satellites read the ocean with microwaves</h3><p>Since NASA's Geos-3 in 1975, radar altimeters in orbit have bounced short microwave pulses off the sea surface and timed the echo, turning that into a global map of wave height. Same physics, pointed the other way.</p></div>
+        </div>
+        <div class="oc-entry">
+          <div class="oc-id">OC-006</div>
+          <div><h3>Rogue waves are a separate, real phenomenon</h3><p>Occasionally a wave arrives roughly twice the height of everything around it, for reasons still debated — wave trains briefly reinforcing each other, or currents focusing energy. One was recorded by sensors on a North Sea platform in 1995 and became the field's benchmark case.</p></div>
+        </div>
+      </div>
+
+      <div class="mythbust">
+        <div class="kicker">on the naming collision</div>
+        <p>To be fully transparent: the "micro" in microwave oven refers to the wavelength of the radiation — a few centimetres, tiny next to a radio wave — not the height of anything. It has never, technically, described a small wave. We just liked the sound of the division.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -430,20 +606,22 @@
       <div class="foot-col">
         <h4>Product</h4>
         <a href="#platform">Platform</a>
+        <a href="#facts">Fact Files</a>
+        <a href="#ocean">Micro Waves</a>
         <a href="#pricing">Pricing</a>
         <a href="#telemetry">Telemetry</a>
       </div>
       <div class="foot-col">
         <h4>Company</h4>
-        <a href="#">About (it's a microwave)</a>
-        <a href="#">Careers (none)</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About (it's a microwave)</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Careers (none)</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
-        <a href="#">Terms of reheat</a>
-        <a href="#">Privacy (there is none to violate)</a>
-        <a href="#">*Not a real patent</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms of reheat</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Privacy (there is none to violate)</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">*Not a real patent</a>
       </div>
     </div>
     <div class="foot-bottom">
